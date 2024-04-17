@@ -1,11 +1,11 @@
-import { FC, useEffect, useContext } from "react";
-import "./Home.css";
-import { UserContext } from "../../App";
-import Navbar from "../navbar/Navbar";
-import Stolenbikes from "../bikes/Stolenbikes";
-import Loader from "../loader/Loader";
-import Filter from "../filter/Filter";
-import Error from "../Error/Error";
+import { FC, useEffect, useContext } from 'react'
+import './Home.css'
+import { UserContext } from '../../App'
+import Navbar from '../navbar/Navbar'
+import Stolenbikes from '../bikes/Stolenbikes'
+import Loader from '../loader/Loader'
+import Filter from '../filter/Filter'
+import Error from '../Error/Error'
 
 const Home: FC = () => {
   const {
@@ -21,13 +21,16 @@ const Home: FC = () => {
     showLoader,
     showApiError,
     showNoData,
-  } = useContext(UserContext);
+  } = useContext(UserContext)
+
   useEffect(() => {
-    getData();
-  }, [apiDataParam]);
+    getData()
+    // eslint-disable-next-line
+  }, [apiDataParam])
   useEffect(() => {
-    getCount();
-  }, [apiCountParam]);
+    getCount()
+    // eslint-disable-next-line
+  }, [apiCountParam])
 
   return (
     <div className="main_container">
@@ -47,7 +50,7 @@ const Home: FC = () => {
                     <div className="count_container">
                       {showCount ? (
                         <>
-                          {totalCount} bikes stolen within {inputMiles} miles of{" "}
+                          {totalCount} bikes stolen within {inputMiles} miles of{' '}
                           {inputLocation}
                         </>
                       ) : (
@@ -81,7 +84,7 @@ const Home: FC = () => {
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
